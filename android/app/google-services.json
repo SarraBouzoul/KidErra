@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1019731687594",
+    "project_id": "shehacks-ded39",
+    "storage_bucket": "shehacks-ded39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019731687594:android:1b5a60d970a4cf34cfb8d3",
+        "android_client_info": {
+          "package_name": "com.kiderra.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019731687594-75i471tjkqgifs7urjr83nsuv8iht82o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvtbgwQyLPZuWWu8EfHoIcDbx_rQyGnoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019731687594-75i471tjkqgifs7urjr83nsuv8iht82o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
