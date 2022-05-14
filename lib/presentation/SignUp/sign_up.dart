@@ -1,9 +1,8 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:kid_erra/presentation/HomePage/home_page.dart';
 import '../../bloc/bloc/auth_bloc.dart';
-import '../Dashboard/dashboard.dart';
 import '../SignIn/sign_in.dart';
 
 class SignUp extends StatefulWidget {
@@ -28,16 +27,14 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("SignUp"),
-      ),
+      backgroundColor: const Color(0xff2C95F1),
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
           if (state is Authenticated) {
             // Navigating to the dashboard screen if the user is authenticated
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
-                builder: (context) => const Dashboard(),
+                builder: (context) => const HomePage(),
               ),
             );
           }
@@ -65,6 +62,7 @@ class _SignUpState extends State<SignUp> {
                       const Text(
                         "Sign Up",
                         style: TextStyle(
+                          color: Colors.white,
                           fontSize: 38,
                           fontWeight: FontWeight.bold,
                         ),
@@ -80,8 +78,10 @@ class _SignUpState extends State<SignUp> {
                               TextFormField(
                                 controller: _emailController,
                                 decoration: const InputDecoration(
+                                  hintStyle: TextStyle(color: Colors.white),
+                                  icon: Icon(Icons.email, color: Colors.white),
+                                  iconColor: Colors.white,
                                   hintText: "Email",
-                                  border: OutlineInputBorder(),
                                 ),
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
@@ -98,8 +98,10 @@ class _SignUpState extends State<SignUp> {
                               TextFormField(
                                 controller: _passwordController,
                                 decoration: const InputDecoration(
+                                  hintStyle: TextStyle(color: Colors.white),
+                                  icon: Icon(Icons.lock, color: Colors.white),
+                                  iconColor: Colors.white,
                                   hintText: "Password",
-                                  border: OutlineInputBorder(),
                                 ),
                                 autovalidateMode:
                                     AutovalidateMode.onUserInteraction,
@@ -113,18 +115,25 @@ class _SignUpState extends State<SignUp> {
                                 height: 12,
                               ),
                               SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.7,
+                                width: MediaQuery.of(context).size.width * 0.3,
                                 child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.white,
+                                  ),
                                   onPressed: () {
                                     _createAccountWithEmailAndPassword(context);
                                   },
-                                  child: const Text('Sign Up'),
+                                  child: const Text(
+                                    'Sign Up',
+                                    style: TextStyle(color: Colors.black),
+                                  ),
                                 ),
                               )
                             ],
                           ),
                         ),
                       ),
+                      const SizedBox(height: 20),
                       const Text("Already have an account?"),
                       OutlinedButton(
                         onPressed: () {
@@ -134,19 +143,11 @@ class _SignUpState extends State<SignUp> {
                                 builder: (context) => const SignIn()),
                           );
                         },
-                        child: const Text("Sign In"),
-                      ),
-                      const Text("Or"),
-                      /*    IconButton(
-                        onPressed: () {
-                          _authenticateWithGoogle(context);
-                        },
-                        icon: Image.network(
-                          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png",
-                          height: 30,
-                          width: 30,
+                        child: const Text(
+                          "Sign In",
+                          style: TextStyle(color: Colors.white),
                         ),
-                      ),*/
+                      ),
                     ],
                   ),
                 ),

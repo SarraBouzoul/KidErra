@@ -2,12 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:kid_erra/presentation/HomePage/home_page.dart';
 import 'bloc/bloc/auth_bloc.dart';
 import 'data/repositories/auth_repository.dart';
 import 'presentation/SignIn/sign_in.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
